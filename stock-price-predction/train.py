@@ -59,7 +59,7 @@ testing_set = dataset_test[[predict_target]].values
 testing_set.shape
 dataset_total = pd.concat((dataset_train['scaled_target'], dataset_test['scaled_target']), 
                           axis = 0)
-inputs = dataset_total[len(dataset_total) - len(dataset_test) - 60:].values
+inputs = dataset_total[len(dataset_total) - len(dataset_test) - timestep:].values
 inputs = inputs.reshape(-1, 1)
 X_test = []
 for i in range(timestep, len(inputs)):
